@@ -1,18 +1,19 @@
-//!Recupero la lista
+//!Recupero l'elemento lista (ul)
 const list = document.getElementById("numbers-list");
+//! Preparo la stringa che conterrà gli elementi
 let items = "";
 
 for (let i = 1; i <= 100; i++) {
-  //console.log(i);
+  let content = i;
+
   if (i % 3 === 0 && i % 5 === 0) {
-    items += `<li>FizzBuzz</li>`;
+    content = `FizzBuzz`;
   } else if (i % 3 === 0) {
-    items += `<li>Fizz</li>`;
+    content = `Fizz`;
   } else if (i % 5 === 0) {
-    items += `<li>Buzz</li>`;
-  } else {
-    items += `<li>${i}</li>`;
+    content = `Buzz`;
   }
+  items += `<li class="${content}">${content}</li>`;
 }
 
 //! Inserisco i risultati nella lista in pagina
